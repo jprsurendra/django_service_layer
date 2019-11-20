@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        Email:<input type="text" id="id_email"><br/>
+        password:<input type="text" id="id_password" value="Jiffy@123">
+        <input type="button" value="Submit" class="clsSubmit">
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).on('click', function(){
+    $.ajax({
+        method: 'PUT',
+        url: '/users/test_oprations/',
+        async: false,
+        data:{
+          //'email':$('#id_email').val(),
+          'name':$('#id_email').val(),
+          'password':$('#id_password').val(),
+           // 'service_method': 'create',
+            'id' : 1
+        },
+        success: function(data){
+
+
+          	alert('added successfully');
+        },
+        error: function(xhr, desc, err){
+
+
+        }
+    });
+    });
+</script>
+</html>
